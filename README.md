@@ -1,65 +1,84 @@
-# SketchGuess
+# 🎨 Skribbl.io Clone – Real-Time Multiplayer Drawing Game
 
-A real-time multiplayer drawing and guessing game built with React, Socket.IO, and Hono.
+A full-stack real-time multiplayer drawing and guessing game inspired by skribbl.io.  
+Built with React, Node.js, and WebSockets (Socket.IO), this project demonstrates real-time communication, game state management, and collaborative interaction.
 
-## How to Run
+---
 
+## 🚀 Features
+
+- 🎮 Multiplayer rooms (create & join via room ID)
+- ✏️ Real-time drawing synced across all players
+- 🔄 Turn-based gameplay (one player draws, others guess)
+- 💬 Live chat & guessing system
+- 🧠 Word selection system for drawer
+- 🏆 Scoring & leaderboard
+- ⚡ WebSocket-based real-time updates
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend**
+- React (Vite)
+- Tailwind CSS
+- HTML5 Canvas API
+
+**Backend**
+- Node.js
+- Express.js
+- Socket.IO
+
+---
+
+## ⚙️ How It Works
+
+- Players join a room using a room ID
+- The server manages game state using structured classes (Room, Player, GameManager)
+- One player is assigned as the drawer each round
+- Drawing data (mouse coordinates) is sent via WebSockets and broadcast to all players
+- Other players submit guesses in real time
+- Correct guesses update scores and advance the game
+
+---
+
+## 📦 Installation & Setup
+
+### 1. Clone the repository
 ```bash
-cd app
+git clone <https://github.com/Veles-venice/skribbleClone.git>
+cd skribbl-clone
+
+- Install dependencies 
 npm install
+cd client && npm install
+
+- Run the project 
+# Run backend
+npm start
+
+# Run frontend (in another terminal)
+cd client
 npm run dev
-```
 
-Open `http://localhost:3000` in your browser.
+🌐 Live Demo
 
-## How to Play
+👉 [https://skribble-clone-2f0lujkdj-veles-venices-projects.vercel.app/]
 
-1. Create a room or join one with a room code
-2. The host starts the game when everyone is ready
-3. The drawer picks a word and draws it on the canvas
-4. Other players guess the word in the chat
-5. Points are awarded for fast correct guesses
-6. The player with the most points at the end wins
+📌 Notes
+This is an MVP focused on core gameplay and real-time functionality
+Game state is managed in-memory (no database used)
+Designed to demonstrate WebSocket architecture and interactive systems
 
-## Tech Stack
 
-- **Frontend**: React, Tailwind CSS, Shadcn UI
-- **Backend**: Hono (Node.js), Socket.IO
-- **Build**: Vite
-- **State**: In-memory (no database needed)
+🔮 Future Improvements
+Persistent database (MongoDB/PostgreSQL)
+Hints system & advanced word logic
+Better UI/UX and animations
+Room settings & player limits
+Deployment optimization
 
-## Project Structure
+👤 Author
 
-```
-app/
-├── api/                    # backend
-│   ├── boot.ts             # server entry point
-│   ├── socket.ts           # socket.io event handlers
-│   └── game-engine/        # game logic
-│       ├── GameManager.ts   # room management
-│       ├── Room.ts          # game state, timer, scoring
-│       ├── Player.ts        # player data
-│       └── wordBank.ts      # word list
-├── src/                    # frontend
-│   ├── main.tsx            # entry point
-│   ├── App.tsx             # routes
-│   ├── index.css           # design system
-│   ├── providers/
-│   │   └── socket.tsx      # socket context
-│   ├── pages/
-│   │   ├── Landing.tsx     # home page
-│   │   ├── Lobby.tsx       # waiting room
-│   │   └── Game.tsx        # game screen
-│   ├── components/game/
-│   │   ├── Canvas.tsx      # drawing canvas
-│   │   ├── Toolbar.tsx     # drawing tools
-│   │   ├── Chat.tsx        # chat & guessing
-│   │   ├── GameInfo.tsx    # timer, word display
-│   │   ├── PlayerList.tsx  # scoreboard
-│   │   ├── WordSelector.tsx
-│   │   ├── CountdownOverlay.tsx
-│   │   └── GameOver.tsx
-│   └── types/
-│       └── game.ts         # shared types
-└── package.json
-```
+Krish Singh
+Github : https://github.com/Veles-venice
