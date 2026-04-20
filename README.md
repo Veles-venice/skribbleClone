@@ -1,84 +1,95 @@
 # 🎨 Skribbl.io Clone – Real-Time Multiplayer Drawing Game
 
-A full-stack real-time multiplayer drawing and guessing game inspired by skribbl.io.  
-Built with React, Node.js, and WebSockets (Socket.IO), this project demonstrates real-time communication, game state management, and collaborative interaction.
+A full-stack real-time multiplayer drawing and guessing game inspired by skribbl.io.
+Built to demonstrate real-time communication, game state handling, and interactive multiplayer systems.
+
+---
+
+## 🌐 Live Demo
+
+👉 https://skribble-clone-2f0lujkdj-veles-venices-projects.vercel.app/
 
 ---
 
 ## 🚀 Features
 
-- 🎮 Multiplayer rooms (create & join via room ID)
-- ✏️ Real-time drawing synced across all players
-- 🔄 Turn-based gameplay (one player draws, others guess)
-- 💬 Live chat & guessing system
-- 🧠 Word selection system for drawer
-- 🏆 Scoring & leaderboard
-- ⚡ WebSocket-based real-time updates
+* 🎮 Multiplayer rooms (create & join via Room ID)
+* ✏️ Real-time drawing synced across players
+* 🔄 Turn-based gameplay
+* 💬 Live chat & guessing system
+* 🧠 Word selection for the drawing player
+* 🏆 Scoring & leaderboard
+* ⚡ Real-time updates using WebSockets
 
 ---
 
 ## 🛠️ Tech Stack
 
-**Frontend**
-- React (Vite)
-- Tailwind CSS
-- HTML5 Canvas API
+### Frontend
 
-**Backend**
-- Node.js
-- Express.js
-- Socket.IO
+* React (Vite)
+* Tailwind CSS
+* HTML5 Canvas API
 
----
+### Backend
 
-## ⚙️ How It Works
-
-- Players join a room using a room ID
-- The server manages game state using structured classes (Room, Player, GameManager)
-- One player is assigned as the drawer each round
-- Drawing data (mouse coordinates) is sent via WebSockets and broadcast to all players
-- Other players submit guesses in real time
-- Correct guesses update scores and advance the game
+* Node.js
+* Express.js
+* Socket.IO
 
 ---
 
-## 📦 Installation & Setup
+## ⚙️ Local Setup
 
 ### 1. Clone the repository
-```bash
-git clone <https://github.com/Veles-venice/skribbleClone.git>
-cd skribbl-clone
 
-- Install dependencies 
+```bash
+git clone https://github.com/Veles-venice/skribbleClone.git
+cd skribbleClone
+```
+
+### 2. Install dependencies
+
+```bash
 npm install
 cd client && npm install
+```
 
-- Run the project 
-# Run backend
+### 3. Run the project
+
+**Backend**
+
+```bash
 npm start
+```
 
-# Run frontend (in another terminal)
+**Frontend**
+
+```bash
 cd client
 npm run dev
+```
 
-🌐 Live Demo
+---
 
-👉 [https://skribble-clone-2f0lujkdj-veles-venices-projects.vercel.app/]
+## 📌 Notes
 
-📌 Notes
-This is an MVP focused on core gameplay and real-time functionality
-Game state is managed in-memory (no database used)
-Designed to demonstrate WebSocket architecture and interactive systems
+* This project focuses on core gameplay and real-time interaction
+* Game state is managed in-memory
+* Built as a demonstration of WebSocket-based systems
 
+---
 
-🔮 Future Improvements
-Persistent database (MongoDB/PostgreSQL)
-Hints system & advanced word logic
-Better UI/UX and animations
-Room settings & player limits
-Deployment optimization
+## 🔮 Future Improvements
 
-👤 Author
+* Persistent database integration
+* Improved UI/UX and animations
+* Enhanced game logic and features
+* Better scalability for larger rooms
 
-Krish Singh
-Github : https://github.com/Veles-venice
+---
+
+## 👤 Author
+
+**Krish Singh**
+GitHub: https://github.com/Veles-venice
