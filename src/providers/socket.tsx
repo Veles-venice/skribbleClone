@@ -61,7 +61,11 @@ export function SocketProvider({ children }: { children: ReactNode }) {
 
   // one socket connection for the whole app
   useEffect(() => {
-    const socket = io(undefined, { path: "/socket.io", transports: ["websocket", "polling"] });
+    
+    const socket = io(import.meta.env.VITE_API_URL || undefined, {
+  path: "/socket.io",
+  transports: ["websocket", "polling"]
+});
     socketRef.current = socket;
 
     socket.on("connect", () => { setIsConnected(true); setError(null); });
